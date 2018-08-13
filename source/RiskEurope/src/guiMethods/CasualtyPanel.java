@@ -46,7 +46,7 @@ public class CasualtyPanel extends JPanel {
 		this.unit_count = unit_count;
 		
 		try {
-			this.unit_img = ImageIO.read(new File("src/resources/units.png"));
+			this.unit_img = ImageIO.read(getClass().getResource("/resources/units.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		};

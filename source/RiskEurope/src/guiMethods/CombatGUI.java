@@ -75,9 +75,9 @@ public class CombatGUI extends JFrame{
 		this.unit_img = this.gui.getGameInfo().getMapUnitImage();
 		
 		try{
-			this.combat_img = ImageIO.read(new File("src/resources/combat_unit_panel.png"));
-			this.reversed_combat_img = ImageIO.read(new File("src/resources/reversed_combat_unit_panel.png"));
-			this.nameplates = ImageIO.read(new File("src/resources/nameplates.png"));
+			this.combat_img = ImageIO.read(getClass().getResource("/resources/combat_unit_panel.png"));
+			this.reversed_combat_img = ImageIO.read(getClass().getResource("/resources/reversed_combat_unit_panel.png"));
+			this.nameplates = ImageIO.read(getClass().getResource("/resources/nameplates.png"));
 		}
 		catch (IOException e){
 			e.printStackTrace();
