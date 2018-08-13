@@ -53,8 +53,8 @@ public class HandGUI extends JFrame {
 		this.selected_2 = null;
 		
 		try{
-			this.highlight_img = ImageIO.read(new File("src/resources/card_highlight.png"));
-			this.select_img = ImageIO.read(new File("src/resources/card_select.png"));
+			this.highlight_img = ImageIO.read(getClass().getResource("/resources/card_highlight.png"));
+			this.select_img = ImageIO.read(getClass().getResource("/resources/card_select.png"));
 		}
 		catch(IOException e){
 			e.printStackTrace();

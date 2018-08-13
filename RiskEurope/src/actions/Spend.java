@@ -49,7 +49,7 @@ public class Spend implements Action{
 		return this.player;
 	}
 	
-	@Override
+	
 	public void getNextAction(){
 		if (this.purchased_units == null){
 			this.info.setSelectionState(GameInfo.PURCHASE);

@@ -56,27 +56,27 @@ public class GameInfo {
 		this.game_state = PLACEMENT;
 		this.selection_state = NO_SELECTION;
 		try {
-			this.map_unit_img = ImageIO.read(new File("src/resources/units.png"));
-			this.gui_unit_img = ImageIO.read(new File("src/resources/panel_units.png"));
-			this.card_back = ImageIO.read(new File("src/resources/card_base.png"));
-			this.empty_selection = ImageIO.read(new File("src/resources/empty_selection.png"));
+			this.map_unit_img = ImageIO.read(getClass().getResource("/resources/units.png"));
+			this.gui_unit_img = ImageIO.read(getClass().getResource("/resources/panel_units.png"));
+			this.card_back = ImageIO.read(getClass().getResource("/resources/card_base.png"));
+			this.empty_selection = ImageIO.read(getClass().getResource("/resources/empty_selection.png"));
 			
-			this.action_img = ImageIO.read(new File("src/resources/card_icons.png"));
-			this.action_highlight_img = ImageIO.read(new File("src/resources/action_highlight.png"));
-			this.action_select_img = ImageIO.read(new File("src/resources/action_select.png"));
-			this.action_option_img = ImageIO.read(new File("src/resources/action_option.png"));
+			this.action_img = ImageIO.read(getClass().getResource("/resources/card_icons.png"));
+			this.action_highlight_img = ImageIO.read(getClass().getResource("/resources/action_highlight.png"));
+			this.action_select_img = ImageIO.read(getClass().getResource("/resources/action_select.png"));
+			this.action_option_img = ImageIO.read(getClass().getResource("/resources/action_option.png"));
 			
-			this.highlight_img = ImageIO.read(new File("src/resources/card_highlight.png"));
-			this.select_img = ImageIO.read(new File("src/resources/card_select.png"));
-			this.castle_img = ImageIO.read(new File("src/resources/map_castle.png"));
+			this.highlight_img = ImageIO.read(getClass().getResource("/resources/card_highlight.png"));
+			this.select_img = ImageIO.read(getClass().getResource("/resources/card_select.png"));
+			this.castle_img = ImageIO.read(getClass().getResource("/resources/map_castle.png"));
 			
-			this.red_back = ImageIO.read(new File("src/resources/red_back.png"));
-			this.blue_back = ImageIO.read(new File("src/resources/blue_back.png"));
-			this.green_back = ImageIO.read(new File("src/resources/green_back.png"));
-			this.yellow_back = ImageIO.read(new File("src/resources/yellow_back.png"));
-			this.black_back = ImageIO.read(new File("src/resources/black_back.png"));
+			this.red_back = ImageIO.read(getClass().getResource("/resources/red_back.png"));
+			this.blue_back = ImageIO.read(getClass().getResource("/resources/blue_back.png"));
+			this.green_back = ImageIO.read(getClass().getResource("/resources/green_back.png"));
+			this.yellow_back = ImageIO.read(getClass().getResource("/resources/yellow_back.png"));
+			this.black_back = ImageIO.read(getClass().getResource("/resources/black_back.png"));
 			
-			this.dice_img = ImageIO.read(new File("src/resources/dice.png"));
+			this.dice_img = ImageIO.read(getClass().getResource("/resources/dice.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

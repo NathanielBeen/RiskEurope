@@ -3,9 +3,13 @@ package guiMethods;
 import java.awt.Color;
 import java.awt.Polygon;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -40,12 +44,12 @@ public class GameInit {
 	 * Init Methods           *
 	 **************************/
 	public void initTerritories(){
-		Scanner scan;
-		File terr_info = new File("src/resources/terr_info");
+		InputStream stream = getClass().getResourceAsStream("/resources/terr_info.txt");
+		BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 		try{
-			scan = new Scanner(terr_info);
-			while (scan.hasNextLine()){
-				String[] info = scan.nextLine().split("\\|");
+			String line = null;
+			while ((line = reader.readLine()) != null){
+				String[] info = line.split("\\|");
 				String name = info[0];
 				int ID = Integer.valueOf(info[1]);
 				
@@ -57,8 +61,8 @@ public class GameInit {
 				int center_y = Integer.valueOf(info[7]);
 				
 				String type = info[8];
-				String url = "src/resources/territoryImages/"+name+".png";
-				BufferedImage img = ImageIO.read(new File(url));
+				String url = "/resources/territoryImages/"+name+".png";
+				BufferedImage img = ImageIO.read(getClass().getResource(url));
 				
 				switch(type){
 				case "t":
@@ -113,13 +117,13 @@ public class GameInit {
 	}
 	
 	public void initConnectors(){
-		Scanner scan;
-		File conn = new File("src/resources/terr_connections");
+		InputStream stream = getClass().getResourceAsStream("/resources/terr_connections.txt");
+		BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 		try{
-			scan = new Scanner(conn);
+			String line = null;
 			int home_id = 1;
-			while (scan.hasNextLine()){
-				String[] connections = scan.nextLine().split("\\|");
+			while ((line = reader.readLine()) != null){
+				String[] connections = line.split("\\|");
 				for (String s : connections){
 					String[] d = s.split(",");
 					Territory home_terr = this.hash.getTerritory(home_id);
@@ -133,6 +137,10 @@ public class GameInit {
 			}
 		}
 		catch (FileNotFoundException e){
+			e.printStackTrace();
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
@@ -153,12 +161,12 @@ public class GameInit {
 	public void initPlayers(){
 		ArrayList<Player> players = new ArrayList<Player>();
 		
-		Scanner scan;
-		File player = new File("src/resources/player_info");
+		InputStream stream = getClass().getResourceAsStream("/resources/player_info.txt");
+		BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 		try{
-			scan = new Scanner(player);
-			while (scan.hasNextLine()){
-				String[] info = scan.nextLine().split("\\|");
+			String line = null;
+			while ((line = reader.readLine()) != null){
+				String[] info = line.split("\\|");
 				String name = info[0];
 				int ID = Integer.valueOf(info[1]);
 				int red = Integer.valueOf(info[2]);
@@ -168,7 +176,7 @@ public class GameInit {
 				players.add(new Player(name,c,ID));
 			}
 		}
-		catch(FileNotFoundException e){
+		catch(NumberFormatException | IOException e){
 			e.printStackTrace();
 		}
 		

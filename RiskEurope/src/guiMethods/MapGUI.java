@@ -57,9 +57,9 @@ public class MapGUI extends JPanel {
 		this.map_y = 0;
 		
 		try {
-			this.map = ImageIO.read(new File("src/resources/risk_europe_2.png"));
+			this.map = ImageIO.read(getClass().getResource("/resources/risk_europe_2.png"));
 			this.final_map = this.map;
-			this.coin = ImageIO.read(new File("src/resources/coins.png"));
+			this.coin = ImageIO.read(getClass().getResource("/resources/coins.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

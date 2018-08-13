@@ -34,9 +34,9 @@ public class TurnOrderPanel extends JPanel{
 		this.gui = gui;
 		
 		try{
-			this.nameplates = ImageIO.read(new File("src/resources/nameplates.png"));
-			this.turn_order_icon = ImageIO.read(new File("src/resources/turn_order_icon.png"));
-			this.current_turn_order_icon = ImageIO.read(new File("src/resources/current_turn_order_icon.png"));
+			this.nameplates = ImageIO.read(getClass().getResource("/resources/nameplates.png"));
+			this.turn_order_icon = ImageIO.read(getClass().getResource("/resources/turn_order_icon.png"));
+			this.current_turn_order_icon = ImageIO.read(getClass().getResource("/resources/current_turn_order_icon.png"));
 		}
 		catch (IOException e){
 			e.printStackTrace();

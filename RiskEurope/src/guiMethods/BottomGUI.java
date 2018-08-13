@@ -36,8 +36,8 @@ public class BottomGUI extends JPanel {
 		this.action_str = "";
 		
 		try{
-			this.bottom_img = ImageIO.read(new File("src/resources/bottom_panel.png"));
-			this.action_img = ImageIO.read(new File("src/resources/current_action_icons.png"));
+			this.bottom_img = ImageIO.read(getClass().getResource("/resources/bottom_panel.png"));
+			this.action_img = ImageIO.read(getClass().getResource("/resources/current_action_icons.png"));
 		}
 		catch(IOException e){
 			e.printStackTrace();

@@ -35,7 +35,7 @@ public class ButtonGUI extends JPanel{
 		this.gui = gui;
 		this.back = this.gui.getGameInfo().getBlackBack();
 		
-		setLayout(new GridLayout(2,2,5,5));
+	 	setLayout(new GridLayout(2,2,5,5));
 		setBorder(new EmptyBorder(5,5,5,5));
 		this.select_text = "Make Selection";
 		

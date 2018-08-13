@@ -47,9 +47,9 @@ public class CardGUI extends JPanel{
 		this.action_highlighted = 0;
 		
 		try{
-			this.select_img = ImageIO.read(new File("src/resources/card_select.png"));
-			this.highlight_img = ImageIO.read(new File("src/resources/card_highlight.png"));
-			this.ordered_card_img = ImageIO.read(new File("src/resources/ordered_card_select.png"));
+			this.select_img = ImageIO.read(getClass().getResource("/resources/card_select.png"));
+			this.highlight_img = ImageIO.read(getClass().getResource("/resources/card_highlight.png"));
+			this.ordered_card_img = ImageIO.read(getClass().getResource("/resources/ordered_card_select.png"));
 		}
 		catch(IOException e){
 			e.printStackTrace();
