@@ -1,4 +1,0 @@
-Red Player|0|255|0|0
-Blue Player|1|0|38|255
-Yellow Player|2|182|255|0
-Green Player|3|38|127|0
